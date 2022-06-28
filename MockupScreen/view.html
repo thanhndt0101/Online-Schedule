@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" style="width:100% ;">
+        <thead>
+            <tr id="head">
+                <script>
+                    var content = document.getElementById("head");
+                    var html = "<td>No</td>  <td>Group</td> <td>Code</td> <td>Name</td>";
+                    for (let index = 1; index < 16; index++) {
+                        html += "<td>Slot " + index + " </td>";
+                    }
+                    content.innerHTML = html;
+                </script>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="body">
+                <td>1</td>
+                <td>SE1631</td>
+                <td>HE163611</td>
+                <td>Doan Manh Hung</td>
+                <script>
+                    var content = document.getElementById("body");
+                    var html = "";
+                    for (let i = 1; i < 16; i++) {
+                        if (i % 2 == 0) {
+                            html += "<td>present</td>";
+                        } else html += "<td>absent</td>";
+                    }
+                    content.innerHTML += html;
+                </script>
+            </tr>
+            <tr id="body2">
+                <td>1</td>
+                <td>SE1631</td>
+                <td>HE163611</td>
+                <td>Doan Manh Hung</td>
+                <script>
+                    var content = document.getElementById("body2");
+                    var html = "";
+                    for (let i = 1; i < 16; i++) {
+                        if (i % 2 == 0) {
+                            html += "<td>present</td>";
+                        } else html += "<td>absent</td>";
+                    }
+                    content.innerHTML += html;
+                </script>
+            </tr>
+            <tr id="body3">
+                <td>1</td>
+                <td>SE1631</td>
+                <td>HE163611</td>
+                <td>Doan Manh Hung</td>
+                <script>
+                    var content = document.getElementById("body3");
+                    var html = "";
+                    for (let i = 1; i < 16; i++) {
+                        if (i % 2 == 0) {
+                            html += "<td>present</td>";
+                        } else html += "<td>absent</td>";
+                    }
+                    content.innerHTML += html;
+                </script>
+            </tr>
+            <tr id="body4">
+                <td>1</td>
+                <td>SE1631</td>
+                <td>HE163611</td>
+                <td>Doan Manh Hung</td>
+                <script>
+                    var content = document.getElementById("body4");
+                    var html = "";
+                    for (let i = 1; i < 16; i++) {
+                        if (i % 2 == 0) {
+                            html += "<td>present</td>";
+                        } else html += "<td>absent</td>";
+                    }
+                    content.innerHTML += html;
+                </script>
+            </tr>
+            <tr id="body5">
+                <td>1</td>
+                <td>SE1631</td>
+                <td>HE163611</td>
+                <td>Doan Manh Hung</td>
+                <script>
+                    var content = document.getElementById("body5");
+                    var html = "";
+                    for (let i = 1; i < 16; i++) {
+                        if (i % 2 == 0) {
+                            html += "<td>present</td>";
+                        } else html += "<td>absent</td>";
+                    }
+                    content.innerHTML += html;
+                </script>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>
