@@ -4,7 +4,15 @@
  */
 package dao;
 
+import context.DBContext;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Student;
 
 /**
@@ -13,8 +21,21 @@ import model.Student;
  */
 public class StudentDAO {
 
-    public List<Student> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Student> getAllStudent() {
+        List<Student>listStudent = new ArrayList<>();
+        try {
+            String sql = "select * from Student";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Student student = new Student(rs.getInt(1),rs.getString(2),rs.getDate(3),rs.getBoolean(4),rs.getString(5));
+                listStudent.add(student);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listStudent;
     }
     
 }

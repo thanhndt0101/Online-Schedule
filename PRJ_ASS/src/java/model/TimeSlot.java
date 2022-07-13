@@ -4,10 +4,38 @@
  */
 package model;
 
+import java.sql.Time;
+
 /**
  *
  * @author Admin
  */
 public class TimeSlot {
+     private int slot;
+    private Time start,end;
+
+    public int getSlot() {
+        return slot;
+    }
+
+    public void setSlot(int slot) {
+        this.slot = slot;
+    }
+
+    public Time getStart() {
+        return start;
+    }
+
+    public void setStart(Time start) {
+        this.start = start;
+    }
+
+    public Time getEnd() {
+        return end;
+    }
+
+    public void setEnd(Time end) {
+        this.end = end;
+    }
     
 }

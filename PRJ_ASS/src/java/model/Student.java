@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,8 +12,8 @@ import java.util.Date;
  * @author Admin
  */
 public class Student {
-    private int sid;
-    private String sname;
+    private int id;
+    private String name;
     private Date dob;
     private boolean gender;
     private String code;
@@ -20,20 +21,28 @@ public class Student {
     public Student() {
     }
 
-    public int getSid() {
-        return sid;
+    public Student(int id, String name, Date dob, boolean gender, String code) {
+        this.id = id;
+        this.name = name;
+        this.dob = dob;
+        this.gender = gender;
+        this.code = code;
     }
 
-    public void setSid(int sid) {
-        this.sid = sid;
+    public int getId() {
+        return id;
     }
 
-    public String getSname() {
-        return sname;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Date getDob() {
@@ -60,9 +69,7 @@ public class Student {
         this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" + "sid=" + sid + ", sname=" + sname + ", dob=" + dob + ", gender=" + gender + ", code=" + code + '}';
-    }
+    
+    
     
 }

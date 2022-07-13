@@ -32,9 +32,9 @@ public class HomeController extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-//         List<Student> listStudent = new StudentDAO().getAll();
-//         request.setAttribute("listStudent", listStudent);
-         request.getRequestDispatcher("listStudent.jsp").forward(request, response);
+         List<Student> listStudent = new StudentDAO().getAllStudent();
+         request.setAttribute("listStudent", listStudent);
+         request.getRequestDispatcher("attendance.jsp").forward(request, response);
         }
     } 
 
