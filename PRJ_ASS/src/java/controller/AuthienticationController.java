@@ -67,9 +67,8 @@ public class AuthienticationController extends HttpServlet {
             request.getSession().setAttribute("account", account);
             response.sendRedirect("schedule");
         } else {
-            //response.getWriter().println("login failed");
-            String inform = "Wrong username or password!";
-            request.setAttribute("inform", inform);
+            
+            
             request.getRequestDispatcher("view/login.jsp").forward(request, response);
         }
     }

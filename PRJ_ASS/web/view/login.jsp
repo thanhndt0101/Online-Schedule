@@ -11,16 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
-        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <link href="css/login_csstemplate.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form action="login" method="POST">
+        <form action="login" method="POST" class="login">
             <input type="text" placeholder="Username" name="user"/> <br/>
             <input type="password" placeholder="Password" name="pass"/> <br/>
-            <input type="submit" value="Login" class="login"/>
+            <button>Login</button>
         </form>
-        <c:if test="${requestScope.inform ne null}">
-            ${requestScope.inform}
-        </c:if>
+        
     </body>
 </html>

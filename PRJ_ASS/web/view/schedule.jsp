@@ -20,10 +20,12 @@
                 form.submit();
             }
         </script>
+        <link href="css/schedule_csstemplate.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
-        <nav>
+        
+        <nav class="headerrrr">
             <a href="schedule">Home</a>
             
             <c:if test="${sessionScope.account ne null}">
@@ -34,10 +36,11 @@
             </c:if>
         </nav>
         <form action="schedule" method="POST" id="schedule_form">
-            <h2>Activities for ${lecture.id}</h2>
+            
             <table border="1" id="schedule_table">
-                <tr>
-                    <td>
+                <div>
+                    <tr>
+                    <td class="tbl-header">
                         Year: 2022 <br/>
                         Week:
                         <select onchange="Submit()" id="week" name="week_index">
@@ -53,14 +56,16 @@
                             </c:forEach>
                         </select>
                     </td>
-                    <td>Mon</td>
-                    <td>Tue</td>
-                    <td>Wed</td>
-                    <td>Thu</td>
-                    <td>Fri</td>
-                    <td>Sat</td>
-                    <td>Sun</td>
+                    <td >Monday</td>
+                    <td >Tuesday</td>
+                    <td>Wednesday</td>
+                    <td>Thursday</td>
+                    <td>Friday</td>
+                    <td>Saturday</td>
+                    <td>Sunday</td>
                 </tr>
+                </div>
+                
                 <tr>
                     <td></td>
                     <c:forEach var="j" begin="0" end="6">
@@ -98,5 +103,7 @@
             </table>
         </form>
     </body>
+        
+        
 
 </html>

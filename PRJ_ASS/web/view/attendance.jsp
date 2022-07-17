@@ -11,9 +11,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Attendance Page</title>
+        <link href="css/schedule_csstemplate.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <nav>
+        <nav class="headerrrr">
             <a href="schedule">Home</a>
            
             <c:if test="${sessionScope.account ne null}">
@@ -23,17 +24,17 @@
                 <a href="login">Login</a>
             </c:if>
         </nav>
-        Attendance for with lecture ${session.taker.id} at slot ${session.slot.slot} on ${session.date} <br>
+        
         <form action="attend" method="POST">
             <table border="1" style=" margin-top: 20px; width: 70%;">
-                <thead>
+                <thead class="tbl-header">
                     <tr>
                         <td>No</td>
                         <td>Group</td>
                         <td>Code</td>
-                        <td>Name</td>
-                        <td>Status</td>
-                        <td>Comment</td>
+                        <td class="long">Name</td>
+                        <td class="long">Status</td>
+                        <td class="long">Comment</td>
                         <td>Taker</td>
                     </tr>
                 </thead>
