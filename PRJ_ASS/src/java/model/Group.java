@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
 public class Group {
     private String id, subject, lecture;
@@ -45,4 +45,5 @@ public class Group {
     public void setLecture(String lecture) {
         this.lecture = lecture;
     }
+    
 }

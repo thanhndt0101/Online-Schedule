@@ -8,10 +8,10 @@ import java.sql.Time;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
 public class TimeSlot {
-     private int slot;
+    private int slot;
     private Time start,end;
 
     public int getSlot() {

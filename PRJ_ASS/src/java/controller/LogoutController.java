@@ -5,21 +5,18 @@
 
 package controller;
 
-import dao.StudentDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
-import model.Student;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
-public class HomeController extends HttpServlet {
+public class LogoutController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -30,12 +27,8 @@ public class HomeController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-         List<Student> listStudent = new StudentDAO().getAllStudent();
-         request.setAttribute("listStudent", listStudent);
-         request.getRequestDispatcher("attendance.jsp").forward(request, response);
-        }
+        request.getSession().removeAttribute("account");
+        response.sendRedirect("login");
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

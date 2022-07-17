@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
 public class Enroll {
     private Student student;
@@ -27,4 +27,6 @@ public class Enroll {
     public void setGroup(Group group) {
         this.group = group;
     }
+    
+    
 }

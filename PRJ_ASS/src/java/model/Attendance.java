@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
 public class Attendance {
     private Session session;
@@ -45,4 +45,5 @@ public class Attendance {
     public void setComment(String comment) {
         this.comment = comment;
     }
+    
 }

@@ -4,31 +4,55 @@
  */
 package model;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
 public class Student {
     private int id;
-    private String name;
-    private Date dob;
+    private String name, code;
     private boolean gender;
-    private String code;
-
-    public Student() {
+    private Date dob;
+    private ArrayList<Enroll> enrolls = new ArrayList<>();
+    private ArrayList<Attendance> attends = new ArrayList<>();
+    
+    public boolean isAttend(Session s) {
+        for(Attendance a: attends) {
+            if(a.getSession().getId() == s.getId()) {
+                if(a.isAttend()) return true;
+            }
+        }
+        return false;
+    }
+    
+    public String getComment(Session s) {
+        String comment= "";
+        for(Attendance a: attends) {
+            if(a.getSession().getId() == s.getId()) {
+                comment = a.getComment();
+            }
+        }
+        return comment;
+    }
+    public ArrayList<Attendance> getAttends() {
+        return attends;
     }
 
-    public Student(int id, String name, Date dob, boolean gender, String code) {
-        this.id = id;
-        this.name = name;
-        this.dob = dob;
-        this.gender = gender;
-        this.code = code;
+    public void setAttends(ArrayList<Attendance> attends) {
+        this.attends = attends;
+    }
+    
+    public ArrayList<Enroll> getEnrolls() {
+        return enrolls;
     }
 
+    public void setEnrolls(ArrayList<Enroll> enrolls) {
+        this.enrolls = enrolls;
+    }
+    
     public int getId() {
         return id;
     }
@@ -45,12 +69,12 @@ public class Student {
         this.name = name;
     }
 
-    public Date getDob() {
-        return dob;
+    public String getCode() {
+        return code;
     }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public boolean isGender() {
@@ -61,15 +85,19 @@ public class Student {
         this.gender = gender;
     }
 
-    public String getCode() {
-        return code;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
-
     
-    
-    
+    public int getAbsent() {
+        int count=0;
+        for(Attendance a : attends) {
+            if(!a.isAttend()) count++;
+        }
+        return count;
+    }
 }

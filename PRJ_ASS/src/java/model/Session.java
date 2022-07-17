@@ -4,11 +4,12 @@
  */
 package model;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
- * @author Admin
+ * @author HAICAO
  */
 public class Session {
     private int id ;
@@ -18,7 +19,16 @@ public class Session {
     private boolean status;
     private Date date;
     private TimeSlot slot;
+    private ArrayList<Attendance> attends = new ArrayList<>();
 
+    public ArrayList<Attendance> getAttends() {
+        return attends;
+    }
+
+    public void setAttends(ArrayList<Attendance> attends) {
+        this.attends = attends;
+    }
+    
     public int getId() {
         return id;
     }
@@ -75,4 +85,6 @@ public class Session {
     public void setSlot(TimeSlot slot) {
         this.slot = slot;
     }
+    
+    
 }
